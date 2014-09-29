@@ -67,7 +67,7 @@ bm('a','b','c').has(bm('x')); // false!
 
 #### Check if one mask contains *any* values from another
 ```js
-mask.has(otherMask);
+mask.any(otherMask);
 ```
 
 Example:
