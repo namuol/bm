@@ -1,0 +1,31 @@
+{
+  "name": "bm",
+  "version": "0.0.0",
+  "description": "create and use arbitrarily-complex bitmasks without thinking",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/namuol/bm"
+  },
+  "keywords": [
+    "doubly",
+    "linked",
+    "list"
+  ],
+  "author": "Louis Acresti <louis.acresti@gmail.com> (http://namuol.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/namuol/bm/issues"
+  },
+  "homepage": "https://github.com/namuol/bm",
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "stochator": "^0.4.0",
+    "tap": "^0.4.12",
+    "tap-min": "^0.1.0",
+    "tape": "^3.0.0"
+  }
+}
