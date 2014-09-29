@@ -65,7 +65,7 @@ bm('a','b','c').has(bm('a')); // true!
 bm('a','b','c').has(bm('x')); // false!
 ```
 
-### Check if one mask contains *any* values from another
+#### Check if one mask contains *any* values from another
 ```js
 mask.has(otherMask);
 ```
@@ -77,7 +77,7 @@ bm('a','b','c').any(bm('a', 'x')); // true!
 bm('a','b','c').any(bm('x', 'y', 'z')); // false!
 ```
 
-### Combine two groups of tags
+#### Combine two groups of tags
 ```js
 var combined = mask.and(otherMask);
 ```
@@ -88,7 +88,7 @@ Example:
 bm('a').and(bm('b')).and(bm('c')) === bm('a', 'b', 'c'); // true!
 ```
 
-### Remove certain tags from a mask
+#### Remove certain tags from a mask
 
 ```js
 var without = mask.not(otherMask);
