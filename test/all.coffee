@@ -206,3 +206,33 @@ describe 'a bitmask', (it) ->
     t.equal abc, abc3
     t.equal abc2, abc3
     t.end()
+
+  it ', when created using "not()", should still return an equal bitmask value for specific tags', (t) ->
+    bm = create()
+
+    a = bm 'a'
+    b = bm 'b'
+    c = bm 'c'
+    abc = bm 'a', 'b', 'c'
+    t.equal abc.not(bm('b','c')), a
+    t.equal abc.not(bm('a','c')), b
+    t.equal abc.not(bm('a','b')), c
+    t.equal abc.not(bm('c')), bm('a','b')
+    t.equal abc.not(bm('b')), bm('a','c')
+    t.equal abc.not(bm('a')), bm('b','c')
+    t.end()
+
+  it ', when created using "not()", should still return an equal bitmask value for specific tags', (t) ->
+    bm = create 200
+
+    a = bm 'a'
+    b = bm 'b'
+    c = bm 'c'
+    abc = bm 'a', 'b', 'c'
+    t.equal abc.not(bm('b','c')), a
+    t.equal abc.not(bm('a','c')), b
+    t.equal abc.not(bm('a','b')), c
+    t.equal abc.not(bm('c')), bm('a','b')
+    t.equal abc.not(bm('b')), bm('a','c')
+    t.equal abc.not(bm('a')), bm('b','c')
+    t.end()

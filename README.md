@@ -30,6 +30,76 @@ sprite.not(bm('texture')) === moveable; // true
 sprite === bm('texture', 'velocity', 'position'); // true
 ```
 
+## API
+
+```js
+var createBitmaskGenerator = require('bm');
+```
+
+#### Create a new bitmask generator
+```js
+var bm = createBitmaskGenerator(maxUniqueValues);
+```
+> **`maxUniqueValues`** ***Number*** *default=31* The number of unique tags supported.
+
+
+#### Create a new bitmask from any number of tags
+```js
+var mask = bm(tag1, tag2, tagN);
+```
+> **`tag1, tag2, tagN...`** ***Strings*** The tags that are marked in this mask.
+
+**Note**: Masks returned by this function can be compared by value, and order of arguments does not matter.
+
+In other words, `bm('a','b','c') === bm('c','b','a')`.
+
+#### Check if one mask contains **all** values from another
+```js
+mask.has(otherMask);
+```
+
+Example:
+
+```js
+bm('a','b','c').has(bm('a')); // true!
+bm('a','b','c').has(bm('x')); // false!
+```
+
+### Check if one mask contains *any* values from another
+```js
+mask.has(otherMask);
+```
+
+Example:
+
+```js
+bm('a','b','c').any(bm('a', 'x')); // true!
+bm('a','b','c').any(bm('x', 'y', 'z')); // false!
+```
+
+### Combine two groups of tags
+```js
+var combined = mask.and(otherMask);
+```
+
+Example:
+
+```js
+bm('a').and(bm('b')).and(bm('c')) === bm('a', 'b', 'c'); // true!
+```
+
+### Remove certain tags from a mask
+
+```js
+var without = mask.not(otherMask);
+```
+
+Example:
+
+```js
+bm('a','b','c').not('b') === bm('a','c'); // true!
+```
+
 ## License
 
 MIT

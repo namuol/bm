@@ -14,6 +14,9 @@ create = (size=31) ->
       and: (other) ->
         val = @_val | other._val
         return masks[val] ? (masks[val] = new Mask val)
+      not: (other) ->
+        val = @_val & ~ other._val
+        return masks[val] ? (masks[val] = new Mask val)
     bm = (args...) ->
       val = 0
       for arg in args
@@ -56,6 +59,14 @@ create = (size=31) ->
         idx = 0
         while idx < @_val.length
           maskData[idx] |= other._val[idx]
+          idx += 1
+        key = uint32ArrayToString maskData
+        return masks[key] ? (masks[key] = new Multimask(new Uint32Array(maskData), key))
+      not: (other) ->
+        maskData.set @_val
+        idx = 0
+        while idx < @_val.length
+          maskData[idx] &= ~ other._val[idx]
           idx += 1
         key = uint32ArrayToString maskData
         return masks[key] ? (masks[key] = new Multimask(new Uint32Array(maskData), key))

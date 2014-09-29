@@ -37,6 +37,12 @@
           return (_ref = masks[val]) != null ? _ref : (masks[val] = new Mask(val));
         };
 
+        Mask.prototype.not = function(other) {
+          var val, _ref;
+          val = this._val & ~other._val;
+          return (_ref = masks[val]) != null ? _ref : (masks[val] = new Mask(val));
+        };
+
         return Mask;
 
       })();
@@ -108,6 +114,18 @@
           idx = 0;
           while (idx < this._val.length) {
             maskData[idx] |= other._val[idx];
+            idx += 1;
+          }
+          key = uint32ArrayToString(maskData);
+          return (_ref = masks[key]) != null ? _ref : (masks[key] = new Multimask(new Uint32Array(maskData), key));
+        };
+
+        Multimask.prototype.not = function(other) {
+          var idx, key, _ref;
+          maskData.set(this._val);
+          idx = 0;
+          while (idx < this._val.length) {
+            maskData[idx] &= ~other._val[idx];
             idx += 1;
           }
           key = uint32ArrayToString(maskData);
