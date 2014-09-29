@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/namuol/bm"
+    "url": "git://github.com/gitsubio/bm"
   },
   "keywords": [
     "bitmask",
@@ -19,9 +19,9 @@
   "author": "Louis Acresti <louis.acresti@gmail.com> (http://namuol.github.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/namuol/bm/issues"
+    "url": "https://github.com/gitsubio/bm/issues"
   },
-  "homepage": "https://github.com/namuol/bm",
+  "homepage": "https://github.com/gitsubio/bm",
   "devDependencies": {
     "coffee-script": "^1.8.0",
     "tap": "^0.4.12",
