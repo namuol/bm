@@ -1,6 +1,6 @@
 {
   "name": "bm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create and use bitmasks of arbitrary depth without thinking.",
   "main": "index.js",
   "scripts": {
