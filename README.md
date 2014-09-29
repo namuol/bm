@@ -5,10 +5,10 @@ Create and use bitmasks of arbitrary depth without thinking.
 **NOTE:** This is very early in development and has not been tested thoroughly; use at your own risk.
 
 ```js
-var Bitmasker = require('bm');
+var createBitmaskGenerator = require('bm');
 
 // Up to 1000 unique values (actually a multiple of 32 under the hood)
-var bm = new Bitmasker(1000);
+var bm = createBitmaskGenerator(1000);
 
 var positionable = bm('position');
 var moveable = bm('position', 'velocity');
@@ -33,10 +33,10 @@ sprite === bm('texture', 'velocity', 'position'); // true
 ### API
 
 ```js
-var Bitmasker = require('bm');
+var createBitmaskGenerator = require('bm');
 ```
 
-#### `new Bitmasker(size=30)`
+#### `createBitmaskGenerator(size=31)`
 
 ## License
 
