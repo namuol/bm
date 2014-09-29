@@ -1,8 +1,8 @@
-# bm [![Build Status](https://drone.io/github.com/namuol/bm/status.png)](https://drone.io/github.com/namuol/bm/latest) [![devDependency Status](https://david-dm.org/namuol/bm/dev-status.svg?style=flat-square)](https://david-dm.org/namuol/bm#info=devDependencies)
+# bm [![Build Status](https://drone.io/github.com/gitsubio/bm/status.png)](https://drone.io/github.com/gitsubio/bm/latest) [![devDependency Status](https://david-dm.org/gitsubio/bm/dev-status.svg?style=flat-square)](https://david-dm.org/gitsubio/bm#info=devDependencies)
 
 Create and use bitmasks of arbitrary depth without thinking.
 
-**NOTE:** This has not been battle tested yet; use at your own risk. (And please [report issues](http://github.com/namuol/bm/issues))
+**NOTE:** This has not been battle tested yet; use at your own risk. (And please [report issues](http://github.com/gitsubio/bm/issues))
 
 ```js
 var createBitmaskGenerator = require('bm');
