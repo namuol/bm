@@ -1,6 +1,5 @@
 tape = require 'tape'
 create = require '../index'
-Stochator = require 'stochator'
 
 describe = (item, cb) ->
   it = (capability, test) ->
