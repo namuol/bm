@@ -19,7 +19,7 @@ moveable.has(positionable); // true
 positionable.has(bm('velocity')); // false
 
 moveable.any(bm('velocity', 'position', 'texture')); // true
-moveable.all(bm('velocity', 'position', 'texture')); // false
+moveable.has(bm('velocity', 'position', 'texture')); // false
 
 moveable.and(bm('texture')) === sprite; // true
 sprite.not(bm('texture')) === moveable; // true
