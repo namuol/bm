@@ -1,7 +1,7 @@
 {
   "name": "bm",
   "version": "0.0.0",
-  "description": "create and use arbitrarily-complex bitmasks without thinking",
+  "description": "Create and use bitmasks of arbitrary depth without thinking.",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -11,9 +11,10 @@
     "url": "git://github.com/namuol/bm"
   },
   "keywords": [
-    "doubly",
-    "linked",
-    "list"
+    "bitmask",
+    "bit",
+    "mask",
+    "light"
   ],
   "author": "Louis Acresti <louis.acresti@gmail.com> (http://namuol.github.io/)",
   "license": "MIT",

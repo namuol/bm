@@ -2,7 +2,7 @@
 
 Create and use bitmasks of arbitrary depth without thinking.
 
-**NOTE:** This is very early in development and has not been tested thoroughly; use at your own risk.
+**NOTE:** This has not been battle tested yet; use at your own risk. (And please [report issues](http://github.com/namuol/bm/issues))
 
 ```js
 var createBitmaskGenerator = require('bm');
@@ -18,25 +18,17 @@ moveable.has(bm('position')); // true
 moveable.has(positionable); // true
 positionable.has(bm('velocity')); // false
 
-moveable.any(bm('velocity', 'position')); // false
+moveable.any(bm('velocity', 'position', 'texture')); // true
+moveable.all(bm('velocity', 'position', 'texture')); // false
 
 moveable.and(bm('texture')) === sprite; // true
 sprite.not(bm('texture')) === moveable; // true
 
-// Naturally, order doesn't matter
 // Notice how you can actually compare by value; this is because
-//  the Bitmasker keeps a sort of cache of all the mask objects
+//  the generator keeps a cache of all the mask objects
 //  under the hood.
 sprite === bm('texture', 'velocity', 'position'); // true
 ```
-
-### API
-
-```js
-var createBitmaskGenerator = require('bm');
-```
-
-#### `createBitmaskGenerator(size=31)`
 
 ## License
 
