@@ -97,7 +97,7 @@ var without = mask.not(otherMask);
 Example:
 
 ```js
-bm('a','b','c').not('b') === bm('a','c'); // true!
+bm('a','b','c').not(bm('b')) === bm('a','c'); // true!
 ```
 
 ## License
