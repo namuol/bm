@@ -153,9 +153,10 @@ describe 'a bitmask', (it) ->
       for otherTag, j in tags
         continue  if i == j
         b = bm(otherTag)
+        error = "bm('tag#{i}') and bm('tag#{j}') should not be equal!"
         if (a == b) or (a.toString() == b.toString())
-          error = "bm('tag#{i}') and bm('tag#{j}') should not be equal!"
           break
+        error = ""
     t.equal error, ""
     t.end()
 
@@ -171,10 +172,11 @@ describe 'a bitmask', (it) ->
       for otherTag, j in tags
         continue  if i == j
         b = bm(otherTag)
+        error = "bm('tag#{i}') and bm('tag#{j}') should not be equal!"
         if (a == b) or (a.toString() == b.toString())
-          t.fail "bm('tag#{i}') and bm('tag#{j}') should not be equal!"
-          t.end()
-          return
+          break
+        error = ""
+    t.equal error, ""
     t.end()
 
   it ', when created using "and()", should still return an equal bitmask value for specific tags', (t) ->

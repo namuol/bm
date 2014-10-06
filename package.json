@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/gitsubio/bm",
   "devDependencies": {
+    "browserify": "^6.0.2",
     "coffee-script": "^1.8.0",
+    "coverify": "^1.0.7",
     "tap": "^0.4.12",
     "tap-min": "^0.1.0",
     "tape": "^3.0.0"
