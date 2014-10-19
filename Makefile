@@ -7,7 +7,7 @@ clean:
 	rm -rf index.js
 
 test:
-	@`npm bin`/coffee test/all.coffee | `npm bin`/tap-min
+	@`npm bin`/coffee test/all.coffee | `npm bin`/tap-difflet
 
 coverage: build
 	@coffee -c --bare test
